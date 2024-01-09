@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Example</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            position: absolute;
+            color: darkblue;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            z-index: 1;
+        }
+
+        .button {
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #button1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #button2 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Crop Yield Prediction</h1>
+    <video autoplay loop muted playsinline>
+        <source src="example.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button id="button1" class="button">Button 1</button>
+    <button id="button2" class="button">Button 2</button>
+</body>
+</html>
