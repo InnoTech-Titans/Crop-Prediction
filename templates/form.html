@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation System</title>
+    <style>
+
+    body {
+        background-color: whitesmoke
+    }
+        @import url("https://fonts.googleapis.com/css2?family=Lemon&family=Open+Sans&display=swap");
+
+.input_element {
+  margin: 40px;
+}
+
+.title {
+  color: #56b17f;
+  font-family: "Lemon", serif;
+  text-align: center;
+  font-size: 2.0em;
+
+}
+
+.subtitle {
+    font-size: 1.5em;
+  color: solid black;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+label {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+}
+
+input[type="number"]:focus {
+  border: 3px solid #555;
+}
+
+.farm-btn {
+  font-family: "Open Sans", sans-serif;
+  background-color: #56b17f;
+  padding: 10px 20px 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h1 class="title">CropWise - Recommendation System 🌾</h1>
+<p class="subtitle">Find out the best crop suitable for your farm</p>
+<hr />
+<br />
+<form method="POST" action="">
+
+  <div class="input_element">
+    <label>Nitrogen:</label>
+    <input type="number" min=0 name="Nitrogen_value" id="Nitrogen_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Phosphorus:</label>
+    <input type="number" min=0 name="Phosphorus_value" id="Phosphorus_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Potassium:</label>
+    <input type="number" min=0 name="Potassium_value" id="Potassium_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Temperature:</label>
+    <input type="number" min=0 name="Temperature_value" id="Temperature_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Humidity in percentage:</label>
+    <input type="number" min=0 name="Humidity_value" id="Humidity_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Ph:</label>
+    <input type="number" min=0 name="Ph_value" id="Ph_value" required/>
+  </div>
+
+  <div class="input_element">
+    <label>Rainfall in mm:</label>
+    <input type="number" min=0 name="Rainfall_value" id="Rainfall_value" required/>
+  </div>
+
+  <div class="input_element">
+    <button type="submit" class="farm-btn">Predict</button>
+  </div>
+</form>
+    
+</body>
+</html>

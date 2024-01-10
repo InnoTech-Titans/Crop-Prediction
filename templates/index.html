@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background Example</title>
+    <title>CropWise - Home</title>
     <style>
         body {
             margin: 0;
@@ -18,56 +18,72 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            filter: brightness(0.4);
+
         }
 
-        h1 {
+        h2 {
             position: absolute;
             color: darkblue;
-            top: 10%;
+            top: 40%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
             color: white;
             text-align: center;
-            font-size: 2em;
+            font-size: 1.6em;
             z-index: 1;
         }
 
-        .button {
-            position: absolute;
-            width: 100px;
-            height: 40px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            z-index: 1;
-        }
+        .btn-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-        #button1 {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        .btn-group button {
+            background: #009c22;
+  background-image: -webkit-linear-gradient(top, #009c22, #77ff00);
+  background-image: -moz-linear-gradient(top, #009c22, #77ff00);
+  background-image: -ms-linear-gradient(top, #009c22, #77ff00);
+  background-image: -o-linear-gradient(top, #009c22, #77ff00);
+  background-image: linear-gradient(to bottom, #009c22, #77ff00);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: 10px;
 
-        #button2 {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 50%);
-        }
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
     </style>
 </head>
 <body>
-    <h1>Crop Yield Prediction</h1>
+    <h2>CropWise 🧑🏼‍🌾 - Find out the best crop suitable for your farm</h2>
     <video autoplay loop muted playsinline>
-        <source src="example.mp4" type="video/mp4">
+        <source src="../static/videos/example.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <button id="button1" class="button">Button 1</button>
-    <button id="button2" class="button">Button 2</button>
+    <div class="btn-group">
+        <button>Get the recommendation</button>
+      </div>
+    
 </body>
 </html>
