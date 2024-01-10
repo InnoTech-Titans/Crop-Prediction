@@ -80,8 +80,18 @@ input[type="number"]:focus {
 
     <h1 class="title">CropWise - Recommendation System 🌾</h1>
 <p class="subtitle">Find out the best crop suitable for your farm</p>
+<center>
+  <a href="{{ url_for('home') }}">
+    <button class="farm-btn">Back to home</button>
+    </a>
+    <br />
+    <br />
+
+</center>
 
 <div class="container">
+
+
 <form method="POST" action="">
 
   <div class="input_element">
@@ -120,10 +130,12 @@ input[type="number"]:focus {
   </div>
 
   <div class="input_element">
+    
     <button type="submit" class="farm-btn">Predict</button>
   </div>
   <br>
 </form>
+
     </div>
 <br><br>
 </body>
