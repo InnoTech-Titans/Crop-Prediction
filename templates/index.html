@@ -1,89 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CropWise - Home</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Ollie landing page.">
+    <meta name="author" content="Devcrud">
+    <title>CropWise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.4);
-
-        }
-
-        h2 {
-            position: absolute;
-            color: darkblue;
-            top: 40%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            color: white;
-            text-align: center;
-            font-size: 1.6em;
-            z-index: 1;
-        }
-
-        .btn-group {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-        .btn-group button {
-            background: #009c22;
-  background-image: -webkit-linear-gradient(top, #009c22, #77ff00);
-  background-image: -moz-linear-gradient(top, #009c22, #77ff00);
-  background-image: -ms-linear-gradient(top, #009c22, #77ff00);
-  background-image: -o-linear-gradient(top, #009c22, #77ff00);
-  background-image: linear-gradient(to bottom, #009c22, #77ff00);
-  -webkit-border-radius: 4;
-  -moz-border-radius: 4;
-  border-radius: 4px;
-  font-family: Georgia;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-
-
-    </style>
-</head>
-<body>
-    <h2>CropWise 🧑🏼‍🌾 - Find out the best crop suitable for your farm</h2>
-    <video autoplay loop muted playsinline>
-        <source src="../static/videos/example.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="btn-group">
-        <button>Get the recommendation</button>
-      </div>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.css">
+
+    <!-- Bootstrap + Ollie main styles -->
+	<link rel="stylesheet" href="assets/css/ollie.css">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.jpg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#requirements">Requirements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ml-0 ml-lg-4">
+                        <a class="nav-link btn btn-primary" href="components.html">Get the recommendation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">CropWise 🧑🏼‍🌾<br>Find out the best crop suitable for your farm                            </h1>
+                            <a href="#about">
+                            <button class="btn btn-primary btn-rounded">Know More</button>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+       
+    </header>
+
+    <section class="section" id="about">
+
+        <div class="container mb-3">
+            <h3 class="section-title mb-5">About Us</h3>
+
+            <div class="blog-wrapper">
+                <div class="img-wrapper">
+                    <img src="assets/imgs/farmer.jpg" alt="">
+                    <div class="date-container">
+                        <h6 class="day">We</h6>
+                        <h6 class="mun">help Farmers</h6> 
+                    </div>
+                </div>
+                <div class="txt-wrapper">
+                    <h4 class="blog-title">How our application helps!</h4>
+                    <p>
+                        Agriculture is the largest livelihood provider in India, supporting 58% of the population and 17.8% of the GDP
+                        India has a diverse range of agricultural sectors, from farming and food processing to floriculture and bio-agriculture
+                        India is the world's largest producer of spices, pulses, milk, tea, cashew, and jute, and the second largest producer of wheat, rice, fruits, and vegetables
+                        India's agricultural sector faces many challenges, such as low productivity, climate change, water scarcity, soil degradation, and market inefficiencies. <b>So using our
+                        application, they can find the best crop to grow, based on the soil conditions.</b>
+                        <a href="#" class="badge badge-info">Team: CropWise</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+   
+
+    <section class="section" id="requirements">
+        <div class="container">
+            <h6 class="xs-font mb-0">Requirements</h6>
+            <h3 class="section-title pb-4">These are the Requirements that will predict the best crop for your soil.</h3>
+        </div>
+
+        <div id="owl-portfolio" class="owl-carousel owl-theme mt-4">
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-1.jpg" alt="Nitrogen" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Nitrogen</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-2.png"alt="Phosphorus" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Phosphorus</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-3.jpg"alt="Potassium" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Potassium</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-4.png"alt="Temperature" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Temperature</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-5.jpg"alt="Humidity in percentage" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Humidity in percentage</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-6.jpg"alt="Ph" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Ph</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a>     
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-7.jpg"alt="Rainfall in mm" class="box-shadow" width="300px" height="300px" style="border:  2px solid black;">
+                <h6 class="mt-3 mb-2">Rainfall in mm</h6>
+                <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </a>         
+        </div>
+    </section>
+
+
+  
+   
+
+   
+    <section id="contact" class="section pb-0">
+
+        <div class="container">
+            <h3 class="section-title mb-5">Contact Us</h3>
+
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-8 col-lg-7">
+
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col form-group">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 d-none d-md-block order-1">
+                    <ul class="list">
+                        <img src="assets/imgs/farmer1.jpg" width="350px" height="250px">
+
+                    </ul> 
+                </div>
+            </div>
+
+            <footer class="footer mt-5 border-top">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a target="_blank" href="/">Team CropWise</a></p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                        </div>
+                    </div>
+                </div> 
+            </footer>
+        </div>
+    </section>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    
+    <!-- Owl carousel  -->
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.js"></script>
+
+
+    <!-- Ollie js -->
+    <script src="assets/js/Ollie.js"></script>
+
 </body>
 </html>
