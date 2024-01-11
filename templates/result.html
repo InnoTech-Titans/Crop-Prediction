@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Ollie landing page.">
+    <meta name="author" content="Devcrud">
+    <title>CropWise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.css">
+
+    <!-- Bootstrap + Ollie main styles -->
+	<link rel="stylesheet" href="assets/css/ollie.css">
+
+</head>
+<body data-spy="scroll" data-target=".navbar"  >
+
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.jpg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                   
+                    <li class="nav-item ml-0 ml-lg-4">
+                        <a class="nav-link btn btn-primary" href="{{ url_for('home') }}">Back to home page</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="container">
+            <h1>Based on the model prediction, <font style="color: #56b17f;">{{ prediction }}</font> would be a right choice for your farm.</h1>
+            <br />
+            <br />
+            <img src="{{ image_url }}" height="300px" width="400px">
+    </div>
+
+</body>
+</html>

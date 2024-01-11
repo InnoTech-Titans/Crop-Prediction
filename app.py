@@ -1,9 +1,31 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import requests
+
+api_key = "AIzaSyBh8NUavqlu9qadl7FjgP2Y1rMDpI0pJ8I"
+cx = "c5bc3c5d3db9e4084"
+
 
 app = Flask(__name__,
             static_folder="templates/assets")
+
+def fetch_image_urls(query):
+    base_url = "https://www.googleapis.com/customsearch/v1"
+    params = {
+        "q": query,
+        "cx": cx,
+        "key": api_key,
+        "searchType": "image",
+    }
+
+    response = requests.get(base_url, params=params)
+    data = response.json()
+
+    # Extract image URLs from the response
+    image_urls = [item["link"] for item in data.get("items", [])]
+
+    return image_urls
 
 def load_model(modelfile):
 	loaded_model = pickle.load(open(modelfile, 'rb'))
@@ -35,8 +57,12 @@ def predict():
         prediction = loaded_model.predict(single_pred)
         print(prediction[0])
 
+        image_urls = fetch_image_urls(prediction[0])
+        image_url = image_urls[0]
+        print(image_url)
+
         # Display the predicted crop on the result page
-        return render_template('result.html', prediction=prediction[0])
+        return render_template('result.html', prediction=prediction[0], image_url=image_url)
     return render_template('form.html')
 
 if __name__ == '__main__':
