@@ -32,10 +32,17 @@ def load_model(modelfile):
 	return loaded_model
 
 
-# Define the home route
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def home():
+    if request.method == 'POST':
+        user_name = request.form['contact_name']
+        user_email = request.form['contact_email']
+        user_message = request.form['contact_message']
+
+    
     return render_template('index.html')
+
+
 
 # Define the prediction route
 @app.route('/predict', methods=['POST', 'GET'])
@@ -64,6 +71,7 @@ def predict():
         # Display the predicted crop on the result page
         return render_template('result.html', prediction=prediction[0], image_url=image_url)
     return render_template('form.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

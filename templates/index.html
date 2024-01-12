@@ -163,17 +163,17 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-8 col-lg-7">
 
-                    <form class="contact-form">
+                    <form class="contact-form" method="POST">
                         <div class="form-row">
                             <div class="col form-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" name="contact_name" id="contact_name" class="form-control" placeholder="Name">
                             </div>
                             <div class="col form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="contact_email" id="contact_email" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Your Message"></textarea>
+                            <textarea name="contact_message" id="contact_message" cols="30" rows="5" class="form-control" placeholder="Your Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-block" value="Send Message">
