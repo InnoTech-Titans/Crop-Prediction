@@ -2,3 +2,4 @@ templates/example.mp4
 static/videos/
 env/
 model.py
+instance/store_values.db
