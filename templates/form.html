@@ -85,6 +85,7 @@ input[type="number"]:focus {
   <a href="{{ url_for('home') }}">
     <button class="farm-btn">Back to home</button>
     </a>
+    <button id="getValuesBtn" class="farm-btn">Get Values</button>
     <br />
     <br />
 
@@ -122,22 +123,49 @@ input[type="number"]:focus {
 
   <div class="input_element">
     <label>Ph:</label>
-    <input type="number" min=0 name="Ph_value" id="Ph_value" required/>
+    <input type="number" min=0 step="0.01" name="Ph_value" id="Ph_value" required/>
   </div>
 
   <div class="input_element">
     <label>Rainfall in mm:</label>
-    <input type="number" min=0 name="Rainfall_value" id="Rainfall_value" required/>
+    <input type="number" min=0 step="0.01" name="Rainfall_value" id="Rainfall_value" required/>
   </div>
 
   <div class="input_element">
     
-    <button type="submit" class="farm-btn">Predict</button>
+    <center><button type="submit" class="farm-btn">Predict</button></center>
   </div>
   <br>
 </form>
 
     </div>
 <br><br>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            function getValues() {
+                $.ajax({
+                    type: "GET",
+                    url: "/get_values", 
+                    success: function (data) {
+                        $("#Nitrogen_value").val(data.Nitrogen);
+                        $("#Phosphorus_value").val(data.Phosphorus);
+                        $("#Potassium_value").val(data.Potassium);
+                        $("#Temperature_value").val(data.Temperature);
+                        $("#Humidity_value").val(data.Humidity);
+                        $("#Ph_value").val(data.Ph);
+                        $("#Rainfall_value").val(data.Rainfall);
+                    },
+                    error: function () {
+                        alert("Failed to fetch values.");
+                    }
+                });
+            }
+            $("#getValuesBtn").on("click", function () {
+                getValues();
+            });
+        });
+    </script>
 </body>
 </html>
