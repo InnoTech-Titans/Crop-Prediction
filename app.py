@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import pandas as pd
 import requests
 
 api_key = "AIzaSyBh8NUavqlu9qadl7FjgP2Y1rMDpI0pJ8I"
@@ -27,6 +28,15 @@ def fetch_image_urls(query):
 
     return image_urls
 
+def read_data():
+    excel_file_path = 'data.xlsx'
+    df = pd.read_excel(excel_file_path)
+    ch_values = df[['CH1', 'CH2', 'CH3', 'CH4', 'CH5']]
+    ch_values_array = ch_values.values
+    final_data = ch_values_array[0]
+
+    return final_data
+
 def load_model(modelfile):
 	loaded_model = pickle.load(open(modelfile, 'rb'))
 	return loaded_model
@@ -38,7 +48,7 @@ def home():
         user_name = request.form['contact_name']
         user_email = request.form['contact_email']
         user_message = request.form['contact_message']
-
+        
     
     return render_template('index.html')
 
