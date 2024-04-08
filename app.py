@@ -7,7 +7,7 @@ from flask import jsonify
 import random
 from flask_sqlalchemy import SQLAlchemy
 
-api_key = "AIzaSyBh8NUavqlu9qadl7FjgP2Y1rMDpI0pJ8I"
+api_key = "AIzaSyDVxTej4dwhhFTaGRFHYHeuFwwxYBWaWE8"
 cx = "c5bc3c5d3db9e4084"
 
 
