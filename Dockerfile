@@ -1,20 +1,15 @@
-FROM python:3.9
+FROM python3.9
 
-# Allows docker to cache installed dependencies between builds
+WORKDIR /python-docker
+
 COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-# Create a new user named 'appuser' with UID between 10000 and 20000
-RUN useradd -m -s /bin/bash -u 15000 appuser
-
-# Set the working directory and ownership
-WORKDIR /code
-RUN chown -R appuser:appuser /code
-
-# Switch to the newly created user
-USER appuser
-
-# Mounts the application code to the image
 COPY . .
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+RUN ls
+# Create a new user with UID 10016
+RUN addgroup -g 10016 choreo && \
+    adduser  --disabled-password  --no-create-home --uid 10016 --ingroup choreo choreouser
+USER 10016
+EXPOSE 5000
+CMD [ "flask", "run", "--host=0.0.0.0"]
