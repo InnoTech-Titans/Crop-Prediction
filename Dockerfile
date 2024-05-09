@@ -4,8 +4,8 @@ FROM python:3.9
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Create a new user named 'appuser'
-RUN useradd -m -s /bin/bash appuser
+# Create a new user named 'appuser' with UID between 10000 and 20000
+RUN useradd -m -s /bin/bash -u 15000 appuser
 
 # Set the working directory and ownership
 WORKDIR /code
